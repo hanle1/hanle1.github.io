@@ -84,12 +84,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="程序代码名次解释启动区:软盘第一个的扇区即为启动区,计算机读写软盘的时候，并不是一个字节一个字节地读写，而是以512字节为一个单位读写，因此软盘的512自己称为一个扇区。IPL: 启动程序的加载器，启动区只有512字节，操作系统很大，根本装不进去，所有几乎所有的操作系统，都是把加载操作系统本身的程序放在启动区里。有鉴于此，将启动区称为IPL。BIOA: 电脑本身又个BIOS的程序，出厂时就卸载电">
+<meta property="og:type" content="article">
+<meta property="og:title" content="30天自制操作系统(1)">
+<meta property="og:url" content="http://yoursite.com/2017/01/14/30天自制操作系统-1/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="程序代码名次解释启动区:软盘第一个的扇区即为启动区,计算机读写软盘的时候，并不是一个字节一个字节地读写，而是以512字节为一个单位读写，因此软盘的512自己称为一个扇区。IPL: 启动程序的加载器，启动区只有512字节，操作系统很大，根本装不进去，所有几乎所有的操作系统，都是把加载操作系统本身的程序放在启动区里。有鉴于此，将启动区称为IPL。BIOA: 电脑本身又个BIOS的程序，出厂时就卸载电">
+<meta property="og:updated_time" content="2017-01-14T04:06:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="30天自制操作系统(1)">
+<meta name="twitter:description" content="程序代码名次解释启动区:软盘第一个的扇区即为启动区,计算机读写软盘的时候，并不是一个字节一个字节地读写，而是以512字节为一个单位读写，因此软盘的512自己称为一个扇区。IPL: 启动程序的加载器，启动区只有512字节，操作系统很大，根本装不进去，所有几乎所有的操作系统，都是把加载操作系统本身的程序放在启动区里。有鉴于此，将启动区称为IPL。BIOA: 电脑本身又个BIOS的程序，出厂时就卸载电">
 
 
 
@@ -117,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/01/14/30天自制操作系统-1/"/>
 
 
 
 
 
-  <title> Hexo </title>
+  <title> 30天自制操作系统(1) | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -144,9 +148,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -227,9 +229,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -262,10 +264,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/01/14/30天自制操作系统-1/" itemprop="url">
-                  30天自制操作系统(1)
-                </a>
+                30天自制操作系统(1)
               
             
           </h1>
@@ -316,24 +315,26 @@
       
 
       
-        
-          
-            <a id="more"></a>
+        <a id="more"></a>
 <h2 id="程序代码"><a href="#程序代码" class="headerlink" title="程序代码"></a>程序代码</h2><h3 id="名次解释"><a href="#名次解释" class="headerlink" title="名次解释"></a>名次解释</h3><p>启动区:软盘第一个的扇区即为启动区,计算机读写软盘的时候，并不是一个字节一个字节地读写，<br>而是以512字节为一个单位读写，因此软盘的512自己称为一个扇区。<br>IPL: 启动程序的加载器，启动区只有512字节，操作系统很大，根本装不进去，所有几乎所有的<br>操作系统，都是把加载操作系统本身的程序放在启动区里。有鉴于此，将启动区称为IPL。<br>BIOA: 电脑本身又个BIOS的程序，出厂时就卸载电脑主板的ROM单元里，里面写了一些基本的操<br>作程序，用汇编指令使用时，只需用INT指令加函数代号，如INT    0x10，调用显卡BIOS，他会<br>将指定寄存器里面的内容显示出来。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line">; hello-os</div><div class="line">; TAB=4</div><div class="line"></div><div class="line">		ORG		0x7c00			; 指明程序装载地址</div><div class="line"></div><div class="line">; 标准FAT12格式软盘专用的代码 Stand FAT12 format floppy code</div><div class="line"></div><div class="line">		JMP		entry</div><div class="line">		DB		0xeb, 0x4e, 0x90</div><div class="line">		DB		<span class="string">"HELLOIPL"</span>		; 启动扇区名称（8字节）</div><div class="line">		DW		512				; 每个扇区（sector）大小（必须512字节）</div><div class="line">		DB		1				; 簇（cluster）大小（必须为1个扇区）</div><div class="line">		DW		1				; FAT起始位置（一般为第一个扇区）</div><div class="line">		DB		2				; FAT个数（必须为2）</div><div class="line">		DW		224				; 根目录大小（一般为224项）</div><div class="line">		DW		2880			; 该磁盘大小（必须为2880扇区1440*1024/512）</div><div class="line">		DB		0xf0			; 磁盘类型（必须为0xf0）</div><div class="line">		DW		9				; FAT的长度（必??9扇区）</div><div class="line">		DW		18				; 一个磁道（track）有几个扇区（必须为18）</div><div class="line">		DW		2				; 磁头数（必??2）</div><div class="line">		DD		0				; 不使用分区，必须是0</div><div class="line">		DD		2880			; 重写一次磁盘大小</div><div class="line">		DB		0,0,0x29		; 意义不明（固定）</div><div class="line">		DD		0xffffffff		; （可能是）卷标号码</div><div class="line">		DB		<span class="string">"HELLO-OS   "</span>	; 磁盘的名称（必须为11字?，不足填空格）</div><div class="line">		DB		<span class="string">"FAT12   "</span>		; 磁盘格式名称（必??8字?，不足填空格）</div><div class="line">		RESB	18				; 先空出18字节</div><div class="line"></div><div class="line">; 程序主体</div><div class="line"></div><div class="line">entry:</div><div class="line">		MOV		AX,0			; 初始化寄存器</div><div class="line">		MOV		SS,AX</div><div class="line">		MOV		SP,0x7c00</div><div class="line">		MOV		DS,AX</div><div class="line">		MOV		ES,AX</div><div class="line"></div><div class="line">		MOV		SI,msg</div><div class="line">putloop:</div><div class="line">		MOV		AL,[SI]</div><div class="line">		ADD		SI,1			; 给SI加1</div><div class="line">		CMP		AL,0</div><div class="line">		JE		fin</div><div class="line">		MOV		AH,0x0e			; 显示一个文字</div><div class="line">		MOV		BX,15			; 指定字符颜色</div><div class="line">		INT		0x10			; 调用显卡BIOS</div><div class="line">		JMP		putloop</div><div class="line">fin:</div><div class="line">		HLT						; 让CPU停止，等待指令</div><div class="line">		JMP		fin				; 无限循环</div><div class="line"></div><div class="line">msg:</div><div class="line">		DB		0x0a, 0x0a		; 换行两次</div><div class="line">		DB		<span class="string">"hello, world"</span></div><div class="line">		DB		0x0a			; 换行</div><div class="line">		DB		0</div><div class="line"></div><div class="line">		RESB	0x7dfe-$		; 填写0x00直到0x001fe</div><div class="line"></div><div class="line">		DB		0x55, 0xaa</div></pre></td></tr></table></figure></p>
 <h2 id="程序解析"><a href="#程序解析" class="headerlink" title="程序解析"></a>程序解析</h2><h3 id="主要部分"><a href="#主要部分" class="headerlink" title="主要部分"></a>主要部分</h3><p> 1.ORG 指令将软盘的内容装载在内存的0x7c00起始地址位置。<br> 2.putloop实体那块是用来显示msg的内容的，调用INT 0x10函数，将字符一个一个的显示出来，JMP是跳转指令，ADD SI给SI加1，循环后显示所有字符。<br> 3.HLT 让CPU停止，等待指令，让CPU不进行无意义的空转。</p>
 <h2 id="执行程序"><a href="#执行程序" class="headerlink" title="执行程序"></a>执行程序</h2><p> 将上文程序内容保存至ipl.nas，用汇编编译程序输出一个ipl.bin和ipl.lst列表程序。<br> 另外用edimg.exe将ipl.bin生成.msg的磁盘映像文件，这里用虚拟机打开这个程序。</p>
 <h2 id="PS"><a href="#PS" class="headerlink" title="PS"></a>PS</h2><p>为方便执行，书的作者将源代码和执行程序的写好了，地址是<a href="https://pan.baidu.com/s/1mint7tQ" target="_blank" rel="external">https://pan.baidu.com/s/1mint7tQ</a><br>下载好后，将projects/day2目录下的hellos5这个文件夹拷贝至tolset中,然后命令行进入hellos5中执行make run就能成功运行啦。<br>更多详细内容查看下载的书籍</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
@@ -342,146 +343,34 @@
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/13/hello-world/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="John Doe">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.gif">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Hexo">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Hexo" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/01/13/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2017/01/13/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-13T22:15:10+08:00">
-                2017-01-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
           
           </div>
@@ -489,6 +378,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -508,8 +401,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -551,6 +453,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#程序代码"><span class="nav-number">1.</span> <span class="nav-text">程序代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#名次解释"><span class="nav-number">1.1.</span> <span class="nav-text">名次解释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序解析"><span class="nav-number">2.</span> <span class="nav-text">程序解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主要部分"><span class="nav-number">2.1.</span> <span class="nav-text">主要部分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行程序"><span class="nav-number">3.</span> <span class="nav-text">执行程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PS"><span class="nav-number">4.</span> <span class="nav-text">PS</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
@@ -650,6 +568,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
@@ -681,6 +603,10 @@
 
   
 
+  
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid="></script>
+      <!-- UY END -->
   
 
 
